@@ -7,10 +7,8 @@ import java.util.Scanner;
 public class LanguageTranslator {
 
     public static void main(String[] args) {
-        // Replace with your own API key
         String apiKey = "YOUR_API_KEY";
 
-        // Create a Translate object using the API key
         Translate translate = TranslateOptions.newBuilder().setApiKey(apiKey).build().getService();
 
         Scanner scanner = new Scanner(System.in);
@@ -21,7 +19,6 @@ public class LanguageTranslator {
         System.out.print("Enter target language code (e.g., 'fr' for French): ");
         String targetLanguage = scanner.nextLine();
 
-        // Translate the text
         Translation translation = translate.translate(text, Translate.TranslateOption.targetLanguage(targetLanguage));
         System.out.println("Translated text: " + translation.getTranslatedText());
     }
